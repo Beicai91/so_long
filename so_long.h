@@ -140,6 +140,7 @@ void			map_handling(t_map *map_data, char **argv, t_pos *player_pos,
 void			render_background(t_data *data);
 void			render_other(t_data *data);
 void			render_digits(t_data *data);
+void			render_cats(t_data *data);
 int				render(t_data *data);
 void			init_sprites(t_data *data);
 void			init_catu(t_data *data);
