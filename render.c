@@ -50,6 +50,36 @@ void	render_digits(t_data *data)
 		(data->map_data.height + 2) * SIZE);
 }
 
+void	render_cats(t_data *data)
+{
+	int	x;
+	int	y;
+
+	y = -1;
+	while (data->map_data.map[++y] != NULL)
+	{
+		x = 0;
+		while (data->map_data.map[y][x] != '\0')
+		{
+			if (data->map_data.map[y][x] == 'B')
+			{
+				data->catb_pos.x = x;
+				data->catb_pos.y = y;
+				mlx_put_image_to_window(data->mlxdata.mlx, data->mlxdata.win,
+					data->sprites.catsu->content, SIZE * x, SIZE * y);
+			}
+			if (data->map_data.map[y][x] == 'J')
+			{
+				data->catj_pos.x = x;
+				data->catj_pos.y = y;
+				mlx_put_image_to_window(data->mlxdata.mlx, data->mlxdata.win,
+					data->sprites.catsu->content, SIZE * x, SIZE * y);
+			}
+			x++;
+		}
+	}
+}
+
 void	render_other(t_data *data)
 {
 	int	x;
@@ -70,20 +100,6 @@ void	render_other(t_data *data)
 			if (data->map_data.map[y][x] == 'E')
 				mlx_put_image_to_window(data->mlxdata.mlx, data->mlxdata.win,
 					data->sprites.door_closed, SIZE * x, SIZE * y);
-			if (data->map_data.map[y][x] == 'B')
-			{
-				data->catb_pos.x = x;
-				data->catb_pos.y = y;
-				mlx_put_image_to_window(data->mlxdata.mlx, data->mlxdata.win,
-					data->sprites.catsu->content, SIZE * x, SIZE * y);
-			}
-			if (data->map_data.map[y][x] == 'J')
-			{
-				data->catj_pos.x = x;
-				data->catj_pos.y = y;
-				mlx_put_image_to_window(data->mlxdata.mlx, data->mlxdata.win,
-					data->sprites.catsu->content, SIZE * x, SIZE * y);
-			}
 			x++;
 		}
 	}
@@ -99,6 +115,7 @@ int	render(t_data *data)
 	init_catr(data);
 	render_background(data);
 	render_other(data);
+	render_cats(data);
 	render_digits(data);
 	return (0);
 }
