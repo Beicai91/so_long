@@ -55,7 +55,7 @@ void    move_down(t_data *data, int keycode)
 {
     if (data->map_data.map[data->player_pos.y + 1][data->player_pos.x] != '1')
     {
-        if (data->map_data.map[data->player_pos.y + 1][data->player_pos.x] == '0' || data->map_data.map[data->player_pos.y + 1][data->player_pos.x] == 'P'|| data->map_data.map[data->player_pos.y + 1][data->player_pos.x] == 'B'|| data->map_data.map[data->player_pos.y - 1][data->player_pos.x] == 'J')
+        if (data->map_data.map[data->player_pos.y + 1][data->player_pos.x] == '0' || data->map_data.map[data->player_pos.y + 1][data->player_pos.x] == 'P'|| data->map_data.map[data->player_pos.y + 1][data->player_pos.x] == 'B'|| data->map_data.map[data->player_pos.y + 1][data->player_pos.x] == 'J')
         {
             mlx_put_image_to_window(data->mlxdata.mlx, data->mlxdata.win, data->sprites.mouse_front, data->player_pos.x * SIZE, (data->player_pos.y + 1) * SIZE);
             if (!(data->player_pos.x == data->door_pos.x && data->player_pos.y == data->door_pos.y))
@@ -82,7 +82,7 @@ void    move_left(t_data *data, int keycode)
 {
     if (data->map_data.map[data->player_pos.y][data->player_pos.x - 1] != '1')
     {
-        if (data->map_data.map[data->player_pos.y][data->player_pos.x - 1] == '0' || data->map_data.map[data->player_pos.y][data->player_pos.x - 1] == 'P'|| data->map_data.map[data->player_pos.y][data->player_pos.x - 1] == 'B'|| data->map_data.map[data->player_pos.y - 1][data->player_pos.x] == 'J')
+        if (data->map_data.map[data->player_pos.y][data->player_pos.x - 1] == '0' || data->map_data.map[data->player_pos.y][data->player_pos.x - 1] == 'P'|| data->map_data.map[data->player_pos.y][data->player_pos.x - 1] == 'B'|| data->map_data.map[data->player_pos.y][data->player_pos.x - 1] == 'J')
         {
             mlx_put_image_to_window(data->mlxdata.mlx, data->mlxdata.win, data->sprites.mouse_left, (data->player_pos.x - 1) * SIZE, data->player_pos.y * SIZE);
             if (!(data->player_pos.x == data->door_pos.x && data->player_pos.y == data->door_pos.y))
@@ -109,7 +109,7 @@ void    move_right(t_data *data, int keycode)
 {
     if (data->map_data.map[data->player_pos.y][data->player_pos.x + 1] != '1')
     {
-        if (data->map_data.map[data->player_pos.y][data->player_pos.x + 1] == '0' || data->map_data.map[data->player_pos.y][data->player_pos.x + 1] == 'P'|| data->map_data.map[data->player_pos.y][data->player_pos.x + 1] == 'B' || data->map_data.map[data->player_pos.y - 1][data->player_pos.x] == 'J')
+        if (data->map_data.map[data->player_pos.y][data->player_pos.x + 1] == '0' || data->map_data.map[data->player_pos.y][data->player_pos.x + 1] == 'P'|| data->map_data.map[data->player_pos.y][data->player_pos.x + 1] == 'B' || data->map_data.map[data->player_pos.y][data->player_pos.x + 1] == 'J')
         {
             mlx_put_image_to_window(data->mlxdata.mlx, data->mlxdata.win, data->sprites.mouse_right, (data->player_pos.x + 1) * SIZE, data->player_pos.y * SIZE);
             if (!(data->player_pos.x == data->door_pos.x && data->player_pos.y == data->door_pos.y))

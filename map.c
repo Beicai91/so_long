@@ -12,7 +12,7 @@ void    height_width(int fd, t_map *map_data)
         map_data->height++;
         free(map_line);
         map_line = get_next_line(fd);
-        if (map_line != NULL && (ft_strlen(map_line) - 1) != map_data->width)
+        if (map_line != NULL && (int)(ft_strlen(map_line) - 1) != map_data->width)
         {
             free(map_line);
             report_error("Error\nMap should be rectangular\n", NULL);

@@ -32,7 +32,6 @@ void    render_other(t_data *data)
 {
     int x;
     int y;
-    t_list  *temp;
 
     y = -1;
     while (data->map_data.map[++y] != NULL)
