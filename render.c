@@ -1,19 +1,5 @@
 #include "so_long.h"
 
-void    init_sprites(t_data *data)
-{
-    data->sprites.wall = mlx_xpm_file_to_image(data->mlxdata.mlx, "sprites/wall2.xpm", &data->sprites.width, &data->sprites.height);
-    data->sprites.floor = mlx_xpm_file_to_image(data->mlxdata.mlx, "sprites/floor.xpm", &data->sprites.width, &data->sprites.height);
-    data->sprites.cheese = mlx_xpm_file_to_image(data->mlxdata.mlx, "sprites/cheese.xpm", &data->sprites.width, &data->sprites.height);
-    data->sprites.door_closed = mlx_xpm_file_to_image(data->mlxdata.mlx, "sprites/door_closed.xpm", &data->sprites.width, &data->sprites.height);
-    data->sprites.door_open = mlx_xpm_file_to_image(data->mlxdata.mlx, "sprites/door_open.xpm", &data->sprites.width, &data->sprites.height);
-    data->sprites.mouse_front = mlx_xpm_file_to_image(data->mlxdata.mlx, "sprites/mouse_front.xpm", &data->sprites.width, &data->sprites.height);
-    data->sprites.mouse_back = mlx_xpm_file_to_image(data->mlxdata.mlx, "sprites/mouse_back.xpm", &data->sprites.width, &data->sprites.height);
-    data->sprites.mouse_right = mlx_xpm_file_to_image(data->mlxdata.mlx, "sprites/mouse_right.xpm", &data->sprites.width, &data->sprites.height);
-    data->sprites.mouse_left = mlx_xpm_file_to_image(data->mlxdata.mlx, "sprites/mouse_left.xpm", &data->sprites.width, &data->sprites.height);
-}
-
-
 void    render_background(t_data *data)
 {
     int x;
@@ -32,6 +18,14 @@ void    render_background(t_data *data)
             x++;
         }
     }
+}
+
+void    render_digits(t_data *data)
+{
+    mlx_put_image_to_window(data->mlxdata.mlx, data->mlxdata.win, data->digits.zero, (data->map_data.width - 4) / 2 * SIZE, (data->map_data.height + 2) * SIZE);
+    mlx_put_image_to_window(data->mlxdata.mlx, data->mlxdata.win, data->digits.zero, ((data->map_data.width - 4) / 2 + 1) * SIZE, (data->map_data.height + 2) * SIZE);
+    mlx_put_image_to_window(data->mlxdata.mlx, data->mlxdata.win, data->digits.zero, ((data->map_data.width - 4) / 2 + 2)* SIZE, (data->map_data.height + 2) * SIZE);
+    mlx_put_image_to_window(data->mlxdata.mlx, data->mlxdata.win, data->digits.zero, ((data->map_data.width - 4) / 2 + 3) * SIZE, (data->map_data.height + 2) * SIZE);
 }
 
 void    render_other(t_data *data)
@@ -72,11 +66,13 @@ void    render_other(t_data *data)
 int    render(t_data *data)
 {
     init_sprites(data);
+    init_digits(data);
     init_catU(data);
     init_catD(data);
     init_catL(data);
     init_catR(data);
     render_background(data);
     render_other(data);
+    render_digits(data);
     return (0);
 }

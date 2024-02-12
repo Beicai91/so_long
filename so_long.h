@@ -45,7 +45,7 @@ typedef struct  s_sprite
     void    *floor;
     void    *door_closed;
     void    *door_open;
-    int width; //depends on the image found
+    int width;
     int height;
 }   t_sprite;
 
@@ -75,9 +75,26 @@ typedef struct  s_pos
     int y;
 }   t_pos;
 
+typedef struct  s_digit
+{
+    void    *zero;
+    void    *one;
+    void    *two;
+    void    *three;
+    void    *four;
+    void    *five;
+    void    *six;
+    void    *seven;
+    void    *eight;
+    void    *nine;
+    int width;
+    int height;
+}   t_digit;
+
 typedef struct  s_data
 {
     t_sprite    sprites;
+    t_digit digits;
     t_map   map_data;
     t_mlx   mlxdata;
     t_pos   player_pos;
@@ -110,12 +127,21 @@ void    map_handling(t_map *map_data, char **argv, t_pos *player_pos, t_pos *doo
 
 void    render_background(t_data *data);
 void    render_other(t_data *data);
+void    render_digits(t_data *data);
 int     render(t_data *data);
 void    init_sprites(t_data *data);
 void    init_catU(t_data *data);
 void    init_catD(t_data *data);
 void    init_catL(t_data *data);
 void    init_catR(t_data *data);
+void    init_digits(t_data *data);
+
+void    free_digits(t_data *data);
+void    free_sprites(t_data *data);
+void    free_catsU(t_data *data);
+void    free_catsD(t_data *data);
+void    free_catsL(t_data *data);
+void    free_catsR(t_data *data);
 
 void    game_on(t_data *data);
 void    end_game(t_data *data);
@@ -143,6 +169,10 @@ void    moveup_catJ(t_data *data);
 void    movedown_catJ(t_data *data);
 void    moveleft_catJ(t_data *data);
 void    moveright_catJ(t_data *data);
+
+void    put_digit1(t_data *data, int digit, int offset);
+void    put_digit2(t_data *data, int digit, int offset);
+void    display_digit(t_data *data);
 
 int main(int argc, char *argv[]);
 

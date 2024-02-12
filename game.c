@@ -7,15 +7,12 @@ void    end_game(t_data *data)
     i = -1;
     while (data->map_data.map[++i] != NULL)
         free(data->map_data.map[i]);
-    mlx_destroy_image(data->mlxdata.mlx, data->sprites.wall);
-    mlx_destroy_image(data->mlxdata.mlx, data->sprites.floor);
-    mlx_destroy_image(data->mlxdata.mlx, data->sprites.door_closed);
-    mlx_destroy_image(data->mlxdata.mlx, data->sprites.door_open);
-    mlx_destroy_image(data->mlxdata.mlx, data->sprites.mouse_back);
-    mlx_destroy_image(data->mlxdata.mlx, data->sprites.mouse_front);
-    mlx_destroy_image(data->mlxdata.mlx, data->sprites.mouse_left);
-    mlx_destroy_image(data->mlxdata.mlx, data->sprites.mouse_right);
-    mlx_destroy_image(data->mlxdata.mlx, data->sprites.cheese);
+    free_digits(data);
+    free_sprites(data);
+    free_catsU(data);
+    free_catsD(data);
+    free_catsL(data);
+    free_catsR(data);
     mlx_destroy_window(data->mlxdata.mlx, data->mlxdata.win);
     //mlx_destroy_display(data->mlxdata.mlx);
     free(data->mlxdata.mlx);
@@ -29,6 +26,7 @@ int    key_hook(int keycode, t_data *data)
     {
         move_up(data, keycode);
         data->moves++;
+        display_digit(data);
         //data->moves_msg = ft_itoa(data->moves);
         //mlx_string_put(data->mlxdata.mlx, data->mlxdata.win, data->map_data.width / 2 * SIZE, (data->map_data.height + 2) * SIZE, 0x00FFFFFF, data->moves_msg);
     }
@@ -36,16 +34,19 @@ int    key_hook(int keycode, t_data *data)
     {
         move_down(data, keycode);
         data->moves++;
+        display_digit(data);
     }
     if (keycode == KEY_LEFT)
     {
         move_left(data, keycode);
         data->moves++;
+        display_digit(data);
     }
     if (keycode == KEY_RIGHT)
     {
         move_right(data, keycode);
         data->moves++;
+        display_digit(data);
     }
     if (keycode == ESC || keycode == SPACE)
         end_game(data);
