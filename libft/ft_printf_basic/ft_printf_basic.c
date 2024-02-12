@@ -26,7 +26,8 @@ static int	printf_check(va_list ptr, char c, int *error)
 	else if (c == 's')
 		print_len = ft_putstr_len(va_arg(ptr, char *), 1, error);
 	else if (c == 'p')
-		print_len = ft_putptr_fd((unsigned long long)va_arg(ptr, void *), 1, error);
+		print_len = ft_putptr_fd((unsigned long long)va_arg(ptr, void *), 1,
+				error);
 	else if (c == 'x' || c == 'X')
 		print_len = ft_puthn_fd((unsigned int)va_arg(ptr, int), 1, c, error);
 	else if (c == '%')
@@ -82,8 +83,12 @@ int	main(void)
 	num2 = 36475873;
 	num3 = -274657;
 	uint = 4294967295;
-	print_len = ft_printf_basic("The string is %s, the character is %c, the number is %d.the unsigned int is %u, num3 is %i %%\n ", s, c, num, uint, num3);
-	print_len2 = printf("The string is %s, the character is %c, the number is%d.the unsigned int is %u, num3 is %i %%\n ", s, c, num, uint, num3);
+	print_len = ft_printf_basic("The string is %s, the character is %c,
+			the number is %d.the unsigned int is %u, num3 is %i %%\n ", s, c,
+			num, uint, num3);
+	print_len2 = printf("The string is %s, the character is %c,
+			the number is%d.the unsigned int is %u, num3 is %i %%\n ", s, c,
+			num, uint, num3);
 	printf("%d chars are printed\n", print_len);
 	printf("%d chars are printed with the official printf\n", print_len2);
 	ft_printf_basic("num2's hexidecimal value is %x\n", num2);

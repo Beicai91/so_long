@@ -15,10 +15,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst != NULL)
 	{
-		f(lst ->content);
+		f(lst->content);
 		lst = lst->next;
 	}
 }
-/*
-here we don't need a pointer temp as lst is just a copy of the original pointer pointing to head of linked list in the calling function.
-*/

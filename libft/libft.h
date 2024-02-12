@@ -17,13 +17,13 @@
 #  define BUFFER_SIZE 5
 # endif
 
-# include <stddef.h>
-# include <limits.h>
 # include <fcntl.h>
+# include <limits.h>
+# include <stdarg.h>
+# include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -77,27 +77,29 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 
-//get_next_line single file
-char	*read_store_check(char *buffer, int fd, char *storage);
-char	*free_cut(char *storage, unsigned int index, size_t len);
-char	*join_free(char *storage, char *buffer);
-char	*clear_line(char **storage);
-char	*get_next_line(int fd);
+// get_next_line single file
+char				*read_store_check(char *buffer, int fd, char *storage);
+char				*free_cut(char *storage, unsigned int index, size_t len);
+char				*join_free(char *storage, char *buffer);
+char				*clear_line(char **storage);
+char				*get_next_line(int fd);
 
-//get_next_line multi files
-char	*multi_gnl(int fd);
-char	*read_store_check_multi(char *buffer, int fd, char *substorage);
-char	*join_free_multi(char *substorage, char *buffer);
-char	*clear_line_multi(char **substorage);
-char	*free_cut_multi(char *substorage, unsigned int index, size_t len);
+// get_next_line multi files
+char				*multi_gnl(int fd);
+char				*read_store_check_multi(char *buffer, int fd,
+						char *substorage);
+char				*join_free_multi(char *substorage, char *buffer);
+char				*clear_line_multi(char **substorage);
+char				*free_cut_multi(char *substorage, unsigned int index,
+						size_t len);
 
-//printf basic functions
-int	ft_putd(int n, int *error);
-int	ft_putptr_fd(unsigned long long n, int fd, int *error);
-int	ft_puthn_fd(unsigned int n, int fd, char c, int *error);
-int	ft_putun_fd(unsigned int n, int fd, int *error);
-int	ft_putstr_len(char *s, int fd, int *error);
-int	ft_putchar_len(char c, int fd, int *error);
-int	ft_printf_basic(const char *format, ...);
+// printf basic functions
+int					ft_putd(int n, int *error);
+int					ft_putptr_fd(unsigned long long n, int fd, int *error);
+int					ft_puthn_fd(unsigned int n, int fd, char c, int *error);
+int					ft_putun_fd(unsigned int n, int fd, int *error);
+int					ft_putstr_len(char *s, int fd, int *error);
+int					ft_putchar_len(char c, int fd, int *error);
+int					ft_printf_basic(const char *format, ...);
 
 #endif

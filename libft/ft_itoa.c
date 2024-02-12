@@ -9,16 +9,16 @@
 /*   Updated: 2023/11/09 13:59:45 by bcai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 int	get_len(int n)
 {
-	int	len;
+	int				len;
 	unsigned int	un;
 
-	len = 1; // to save the line len++ after while loop
+	len = 1;
 	if (n < 0)
 	{
 		un = -n;
@@ -36,9 +36,9 @@ int	get_len(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*p;
+	char			*p;
 	unsigned int	un;
-	int	len;
+	int				len;
 
 	len = get_len(n);
 	p = malloc(sizeof(char) * (len + 1));

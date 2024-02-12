@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		n--;
 		s = (unsigned char *)s + 1;
 	}
-	return (NULL); // for case in which s is NULL
+	return (NULL);
 }
 /*
 int	main(int argc, char *argv[])

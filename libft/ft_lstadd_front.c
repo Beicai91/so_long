@@ -15,5 +15,5 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	new->next = *lst;
-	*lst = new; // Here we successfully changed the position of the original pointer in the calling function due to call by reference
+	*lst = new;
 }

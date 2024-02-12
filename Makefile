@@ -6,8 +6,11 @@ LIBFT_PATH = ./libft
 MINILIBX_PATH = ./minilibx
 FT = $(LIBFT_PATH)/libft.a
 MLX = $(MINILIBX_PATH)/libmlx.a
+
 SRCS = check_map_access.c \
 	   display_digits.c \
+	   display_digits_utils.c \
+	   utils.c \
 	   feedback.c \
 	   free_cats.c \
 	   free_others.c \
@@ -17,10 +20,13 @@ SRCS = check_map_access.c \
 	   init_others.c \
 	   map.c \
 	   movements_catB.c \
+	   movements_catB_utils.c \
 	   movements_catJ.c \
+	   movements_catJ_utils.c \
 	   movements_mouse.c \
 	   render.c \
 	   so_long.c
+
 OBJS = ${SRCS:.c=.o}
 
 all:$(NAME)

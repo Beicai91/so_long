@@ -17,7 +17,7 @@
 long	ft_atoi(const char *str)
 {
 	int		indicator;
-	long		result;
+	long	result;
 
 	indicator = 1;
 	result = 0;

@@ -77,8 +77,8 @@ char	*clear_line_multi(char **substorage)
 		if (*temp == '\n')
 		{
 			line = ft_substr((*substorage), 0, temp - (*substorage) + 1);
-			(*substorage) = free_cut_multi(*substorage, temp - (*substorage) + 1,
-					ft_strlen(temp + 1));
+			(*substorage) = free_cut_multi(*substorage, temp - (*substorage)
+					+ 1, ft_strlen(temp + 1));
 			return (line);
 		}
 		temp++;
