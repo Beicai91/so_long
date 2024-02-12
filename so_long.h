@@ -117,6 +117,7 @@ typedef struct s_data
 	int			moves;
 	int			dir_b;
 	int			dir_j;
+	int	frame_per_moves;
 }				t_data;
 
 // utils for map check
