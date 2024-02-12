@@ -15,11 +15,9 @@
 void	moveup_catj(t_data *data)
 {
 	static int	frame_counter = 0;
-	int			frames_per_move;
 
-	frames_per_move = 1500;
 	frame_counter++;
-	if (frame_counter >= frames_per_move)
+	if (frame_counter >= data->frames_per_move)
 	{
 		frame_counter = 0;
 		if (data->player_pos.x == data->catj_pos.x
@@ -46,11 +44,9 @@ void	moveup_catj(t_data *data)
 void	movedown_catj(t_data *data)
 {
 	static int	frame_counter = 0;
-	int			frames_per_move;
 
-	frames_per_move = 1500;
 	frame_counter++;
-	if (frame_counter >= frames_per_move)
+	if (frame_counter >= data->frames_per_move)
 	{
 		frame_counter = 0;
 		if (data->player_pos.x == data->catj_pos.x
@@ -77,11 +73,9 @@ void	movedown_catj(t_data *data)
 void	moveleft_catj(t_data *data)
 {
 	static int	frame_counter = 0;
-	int			frames_per_move;
 
-	frames_per_move = 1500;
 	frame_counter++;
-	if (frame_counter >= frames_per_move)
+	if (frame_counter >= data->frames_per_move)
 	{
 		frame_counter = 0;
 		if (data->player_pos.x == data->catj_pos.x
@@ -108,11 +102,9 @@ void	moveleft_catj(t_data *data)
 void	moveright_catj(t_data *data)
 {
 	static int	frame_counter = 0;
-	int			frames_per_move;
 
-	frames_per_move = 1500;
 	frame_counter++;
-	if (frame_counter >= frames_per_move)
+	if (frame_counter >= data->frames_per_move)
 	{
 		frame_counter = 0;
 		if (data->player_pos.x == data->catj_pos.x
