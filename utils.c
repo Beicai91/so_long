@@ -28,7 +28,7 @@ void	init_data_vars(t_data *data)
 	data->sprites.catsr = NULL;
 	data->dir_b = rand() % 4;
 	data->dir_j = rand() % 4;
-	data->frame_per_move = 1500;
+	data->frames_per_move = 1500;
 	data->mlxdata.mlx = mlx_init();
 	if (!(data->mlxdata.mlx))
 		return ;

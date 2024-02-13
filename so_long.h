@@ -6,7 +6,7 @@
 /*   By: bcai <marvin@42lausanne.ch>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:57:50 by bcai              #+#    #+#             */
-/*   Updated: 2024/02/12 17:22:27 by bcai             ###   ########.fr       */
+/*   Updated: 2024/02/12 20:00:47 by bcai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ typedef struct img_data
 
 enum			e_keycodes
 {
-	KEY_UP = 126,
-	KEY_LEFT = 123,
-	KEY_RIGHT = 124,
-	KEY_DOWN = 125,
+	KEY_UP = 13,
+	KEY_LEFT = 0,
+	KEY_RIGHT = 2,
+	KEY_DOWN = 1,
 	SPACE = 49,
 	ESC = 53
 };
@@ -117,7 +117,7 @@ typedef struct s_data
 	int			moves;
 	int			dir_b;
 	int			dir_j;
-	int	frame_per_move;
+	int	frames_per_move;
 }				t_data;
 
 // utils for map check
@@ -158,7 +158,7 @@ void			free_catsr(t_data *data);
 
 void			game_on(t_data *data);
 void			init_data_vars(t_data *data);
-void			end_game(t_data *data);
+int			end_game(t_data *data);
 int				key_hook(int keycode, t_data *data);
 void			move_up(t_data *data, int keycode);
 void			move_down(t_data *data, int keycode);

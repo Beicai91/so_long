@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-void	end_game(t_data *data)
+int	end_game(t_data *data)
 {
 	int	i;
 
@@ -29,6 +29,7 @@ void	end_game(t_data *data)
 	// mlx_destroy_display(data->mlxdata.mlx);
 	free(data->mlxdata.mlx);
 	exit(0);
+	return (0);
 }
 
 int	key_hook(int keycode, t_data *data)
@@ -110,6 +111,7 @@ void	game_on(t_data *data)
 	mlx_loop_hook(data->mlxdata.mlx, cat_on, data);
 	mlx_key_hook(data->mlxdata.win, key_hook, data);
 	mlx_loop(data->mlxdata.mlx);
+	mlx_hook(data->mlxdata.win, 17, 0, end_game, data);
 	mlx_destroy_window(data->mlxdata.mlx, data->mlxdata.win);
 	// mlx_destroy_display(data->mlxdata.mlx);
 	free(data->mlxdata.mlx);
