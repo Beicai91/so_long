@@ -1,6 +1,6 @@
 NAME = so_long
 CC = cc
-CFLAGS = -Wextra -Werror -Wall
+CFLAGS = -Wextra -Werror -Wall -g -O0
 FRAMEWORK = -framework OpenGL -framework AppKit
 LIBFT_PATH = ./libft
 MINILIBX_PATH = ./minilibx
@@ -16,7 +16,8 @@ SRCS = check_map_access.c \
 	   free_others.c \
 	   game.c \
 	   handle_map_content.c \
-	   init_cats.c \
+	   init_cats1.c \
+	   init_cats2.c \
 	   init_others.c \
 	   map.c \
 	   movements_catB.c \

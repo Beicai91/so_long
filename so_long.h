@@ -117,7 +117,7 @@ typedef struct s_data
 	int			moves;
 	int			dir_b;
 	int			dir_j;
-	int	frames_per_move;
+	int			frames_per_move;
 }				t_data;
 
 // utils for map check
@@ -143,10 +143,14 @@ void			render_digits(t_data *data);
 void			render_cats(t_data *data);
 int				render(t_data *data);
 void			init_sprites(t_data *data);
-void			init_catu(t_data *data);
-void			init_catd(t_data *data);
-void			init_catl(t_data *data);
-void			init_catr(t_data *data);
+void			init_catu1(t_data *data);
+void			init_catu2(t_data *data);
+void			init_catd1(t_data *data);
+void			init_catd2(t_data *data);
+void			init_catl1(t_data *data);
+void			init_catl2(t_data *data);
+void			init_catr1(t_data *data);
+void			init_catr2(t_data *data);
 void			init_digits(t_data *data);
 
 void			free_digits(t_data *data);
@@ -158,7 +162,7 @@ void			free_catsr(t_data *data);
 
 void			game_on(t_data *data);
 void			init_data_vars(t_data *data);
-int			end_game(t_data *data);
+int				end_game(t_data *data);
 int				key_hook(int keycode, t_data *data);
 void			move_up(t_data *data, int keycode);
 void			move_down(t_data *data, int keycode);
@@ -166,6 +170,8 @@ void			move_left(t_data *data, int keycode);
 void			move_right(t_data *data, int keycode);
 void			handle_door(t_data *data, int keycode);
 void			open_door(t_data *data);
+void			cover_c(t_data *data, int x, int y, void *mouse);
+void			if_ondoor(t_data *data);
 
 int				cat_on(t_data *data);
 void			set_temp(t_data *data);

@@ -17,6 +17,8 @@ void	height_width(int fd, t_map *map_data)
 	char	*map_line;
 
 	map_line = get_next_line(fd);
+	if (map_line == NULL)
+		report_error("Error\nMap is empty\n", NULL);
 	map_data->width = ft_strlen(map_line) - 1;
 	while (map_line)
 	{

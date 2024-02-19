@@ -58,8 +58,8 @@ void	render_cats(t_data *data)
 	y = -1;
 	while (data->map_data.map[++y] != NULL)
 	{
-		x = 0;
-		while (data->map_data.map[y][x] != '\0')
+		x = -1;
+		while (data->map_data.map[y][++x] != '\0')
 		{
 			if (data->map_data.map[y][x] == 'B')
 			{
@@ -75,7 +75,6 @@ void	render_cats(t_data *data)
 				mlx_put_image_to_window(data->mlxdata.mlx, data->mlxdata.win,
 					data->sprites.catsu->content, SIZE * x, SIZE * y);
 			}
-			x++;
 		}
 	}
 }
@@ -109,10 +108,14 @@ int	render(t_data *data)
 {
 	init_sprites(data);
 	init_digits(data);
-	init_catu(data);
-	init_catd(data);
-	init_catl(data);
-	init_catr(data);
+	init_catu1(data);
+	init_catu2(data);
+	init_catd1(data);
+	init_catd2(data);
+	init_catl1(data);
+	init_catl2(data);
+	init_catr1(data);
+	init_catr2(data);
 	render_background(data);
 	render_other(data);
 	render_cats(data);

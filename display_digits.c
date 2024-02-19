@@ -32,3 +32,9 @@ void	display_digit(t_data *data)
 		offset--;
 	}
 }
+
+void	display_moves(t_data *data)
+{
+	data->moves++;
+	display_digit(data);
+}
