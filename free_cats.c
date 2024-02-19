@@ -20,6 +20,7 @@ void	free_catsu(t_data *data)
 	{
 		temp = data->sprites.catsu;
 		data->sprites.catsu = data->sprites.catsu->next;
+		mlx_destroy_image(data->mlxdata.mlx, temp->content);
 		free(temp->content);
 		free(temp);
 	}
@@ -33,6 +34,7 @@ void	free_catsd(t_data *data)
 	{
 		temp = data->sprites.catsd;
 		data->sprites.catsd = data->sprites.catsd->next;
+		mlx_destroy_image(data->mlxdata.mlx, temp->content);
 		free(temp->content);
 		free(temp);
 	}
@@ -46,6 +48,7 @@ void	free_catsl(t_data *data)
 	{
 		temp = data->sprites.catsl;
 		data->sprites.catsl = data->sprites.catsl->next;
+		mlx_destroy_image(data->mlxdata.mlx, temp->content);
 		free(temp->content);
 		free(temp);
 	}
@@ -59,6 +62,7 @@ void	free_catsr(t_data *data)
 	{
 		temp = data->sprites.catsr;
 		data->sprites.catsr = data->sprites.catsr->next;
+		mlx_destroy_image(data->mlxdata.mlx, temp->content);
 		free(temp->content);
 		free(temp);
 	}

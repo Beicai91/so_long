@@ -54,6 +54,7 @@ void	get_map(char *filename, t_map *map_data)
 	while (map_line)
 	{
 		map_data->map[i] = ft_strdup(map_line);
+		free(map_line);
 		map_data->map[i++][map_data->width] = '\0';
 		map_line = get_next_line(fd);
 	}
