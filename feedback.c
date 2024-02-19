@@ -16,7 +16,7 @@ void	report_error(char *str, char **map)
 {
 	int	i;
 
-	printf("%s", str);
+	ft_printf_basic("%s", str);
 	if (map)
 	{
 		i = 0;

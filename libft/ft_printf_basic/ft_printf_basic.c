@@ -38,6 +38,14 @@ static int	printf_check(va_list ptr, char c, int *error)
 	return (print_len);
 }
 
+static int	check_error(int error, int print_len)
+{
+	if (error == -1)
+		return (-1);
+	else
+		return (print_len);
+}
+
 int	ft_printf_basic(const char *format, ...)
 {
 	va_list	ptr;
@@ -51,20 +59,20 @@ int	ft_printf_basic(const char *format, ...)
 	print_len = 0;
 	while (format[i] && error != -1)
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && ft_strchr("diucspxX%", format[i + 1]))
 		{
 			i++;
-			print_len += printf_check(ptr, format[i], &error);
-			i++;
+			print_len += printf_check(ptr, format[i++], &error);
 		}
-		error = write(1, &format[i], 1);
-		print_len++;
-		i++;
+		if ((format[i] && format[i] != '%') || (format[i] == '%'
+				&& !ft_strchr("diucspxX%", format[i + 1])))
+		{
+			error = write(1, &format[i++], 1);
+			print_len++;
+		}
 	}
 	va_end(ptr);
-	if (error == -1)
-		return (-1);
-	return (print_len);
+	return (check_error(error, print_len));
 }
 /*
 int	main(void)

@@ -36,5 +36,6 @@ void	display_digit(t_data *data)
 void	display_moves(t_data *data)
 {
 	data->moves++;
+	ft_printf_basic("Moves: %d\n", data->moves);
 	display_digit(data);
 }
