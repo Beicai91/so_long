@@ -26,7 +26,6 @@ int	end_game(t_data *data)
 	free_catsl(data);
 	free_catsr(data);
 	mlx_destroy_window(data->mlxdata.mlx, data->mlxdata.win);
-	free(data->mlxdata.mlx);
 	exit(0);
 	return (0);
 }
