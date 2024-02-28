@@ -43,10 +43,14 @@ void	count_ele(t_map *map_data, char *str)
 	{
 		if (str[i] == 'P')
 			map_data->player++;
-		if (str[i] == 'C')
+		else if (str[i] == 'C')
 			map_data->collectible++;
-		if (str[i] == 'E')
+		else if (str[i] == 'E')
 			map_data->exit++;
+		else if (str[i] == 'J')
+			map_data->enemy += 2;
+		else if (str[i] == 'B')
+			map_data->enemy += 3;
 		i++;
 	}
 }
@@ -72,4 +76,6 @@ void	handle_map_content(t_map *map_data)
 	if (map_data->player != 1 || map_data->collectible < 1
 		|| map_data->exit != 1)
 		report_error("Error\nLack of game elements to play\n", map_data->map);
+	if (map_data->enemy != 5)
+		report_error("Error\nEnemies can only be two and have the name \'J\' and \'B\'\n", map_data->map);
 }
