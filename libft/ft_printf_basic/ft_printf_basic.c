@@ -29,7 +29,7 @@ static int	printf_check(va_list ptr, char c, int *error)
 		print_len = ft_putptr_fd((unsigned long long)va_arg(ptr, void *), 1,
 				error);
 	else if (c == 'x' || c == 'X')
-		print_len = ft_puthn_fd((unsigned int)va_arg(ptr, int), 1, c, error);
+		print_len = ft_puthn_fd(va_arg(ptr, unsigned int), 1, c, error);
 	else if (c == '%')
 	{
 		*error = write(1, "%", 1);
@@ -64,12 +64,8 @@ int	ft_printf_basic(const char *format, ...)
 			i++;
 			print_len += printf_check(ptr, format[i++], &error);
 		}
-		if ((format[i] && format[i] != '%') || (format[i] == '%'
-				&& !ft_strchr("diucspxX%", format[i + 1])))
-		{
-			error = write(1, &format[i++], 1);
-			print_len++;
-		}
+		error = write(1, &format[i++], 1);
+		print_len++;
 	}
 	va_end(ptr);
 	return (check_error(error, print_len));
