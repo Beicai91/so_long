@@ -64,8 +64,11 @@ int	ft_printf_basic(const char *format, ...)
 			i++;
 			print_len += printf_check(ptr, format[i++], &error);
 		}
-		error = write(1, &format[i++], 1);
-		print_len++;
+		else
+		{
+			error = write(1, &format[i++], 1);
+			print_len++;
+		}
 	}
 	va_end(ptr);
 	return (check_error(error, print_len));
