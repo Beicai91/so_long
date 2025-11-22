@@ -3,33 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcai <marvin@42lausanne.ch>                +#+  +:+       +#+        */
+/*   By: caibei <caibei@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:57:50 by bcai              #+#    #+#             */
-/*   Updated: 2024/02/12 20:00:47 by bcai             ###   ########.fr       */
+/*   Updated: 2025/11/22 23:33:22 by caibei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "./libft/libft.h"
-# include "./minilibx/mlx.h"
+# include "../lib/libft/libft.h"
+# include "../lib/minilibx/mlx.h"
 # include <stdlib.h>
 
 # define MALLOC_ERROR 1
 # define FIRST_LAST_LINE 111
 # define MID_LINE 101
 # define SIZE 16
-/*
-typedef struct img_data
-{
-	void		*img;
-	void		*addr;
-	int			bpp;
-	int			line_len;
-	int			endian;
-}   img_data;*/
 
 enum			e_keycodes
 {
