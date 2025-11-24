@@ -19,7 +19,7 @@ make all
 **A**: Move left<br>
 **S**: Move down<br>
 **D**: Move right<br>
-**ESC**: Quit the game
+**ESC** / **SPACE**: Quit the game
 
 ## Dev Features
 - Map parsing and validation

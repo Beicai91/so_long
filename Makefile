@@ -26,7 +26,7 @@ SRCS = src/check_map_access.c \
 	   src/movements_catJ_utils.c \
 	   src/movements_mouse.c \
 	   src/render.c \
-	   src/so_long.c
+	   src/main.c
 
 OBJS = ${SRCS:.c=.o}
 
